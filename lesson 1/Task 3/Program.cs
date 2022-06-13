@@ -3,10 +3,10 @@
 
 Console.WriteLine("Привет, это программа для определения четности числа");
 
-Console.WriteLine(" Введи число ");
-int number =  Convert.ToInt32(Console.ReadLine());
-if (number % 2 == 0)
-{
+Console.WriteLine(" Введи число ");                // ввод числа с клавиатуры
+int number =  Convert.ToInt32(Console.ReadLine()); 
+if (number % 2 == 0)                               // проверка делением без остатка на четность
+{                                                  // вывод в консоль результата
     Console.WriteLine("введенное число четное");
 }else {
     Console.WriteLine("введенное число не четное");
