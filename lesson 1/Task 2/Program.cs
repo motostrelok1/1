@@ -1,17 +1,18 @@
 // Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
-Console.WriteLine("Привет, эта программа находит наибольшее из трех чисел");
+Console.WriteLine("Привет, эта программа находит наибольшее из трех введенных целых чисел");
 
-int[] arr = new int[3];
+int[] arr = new int[3];// создаем массив из 3х целых чисел
 
-for (int i = 0; i <3; i++)
+for (int i = 0; i <3; i++) // создаем цикл для ввода чисел в массив
 {
-    Console.WriteLine(" Введи число " + (i+1));
-    arr[i] =  Convert.ToInt32(Console.ReadLine());
+    Console.Write(" Введи число " + (i+1) + " ");
+    arr[i] =  Convert.ToInt32(Console.ReadLine());// заполняем массив вводом с клавиатуры
 }
 
-for (int i = 0; i <3; i++)
-{
-    Console.Write(" "+arr[i]);
-}
-Console.WriteLine(" max = "+arr.Max());
+foreach (int r in arr)
+    Console.Write(r + " ");// рапечатываем данные из массива
+
+Console.WriteLine(" max = "+arr.Max());// находим максимальное число из введенных
+
+// скучно было решать копипастом, решил через массив :))
