@@ -1,2 +1,2 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("example 3");
+Console.WriteLine("Hello, World!");
