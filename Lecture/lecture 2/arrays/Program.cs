@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿//лекция 2 функции и массивы
 Console.WriteLine("arrays example");
 
 void FillArray(int[] collection){
