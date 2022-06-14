@@ -1,49 +1,25 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("привет эта программ принимает на вход трехзначное число");
+﻿// Напишите программу, которая принимает на вход трёхзначное число и 
+// на выходе показывает вторую цифру этого числа.
 
-int Rand(out int randomNumber){
-    int randomNumber = new Random().Next(100,1000);
-//  Console.WriteLine(randomNumber+" "+(randomNumber%100/10));
-//  int result = randomNumber % 10;
-//  Console.WriteLine("   ");
-return randomNumber;
-}
+int[] arr = new int[3];
 
-//int[] arr = new int[3];
-// for (int i = 0; i < 3; i++)
-// {
-//    arr[i]=Rand.randomNumber;
-//    Console.WriteLine(arr[i]);
-// }
-Console.Writeline(Rand.randomNumber());
+FillArray(arr);
+PrintArray(arr);
 
 
-
-
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("arrays example");
-
-void FillArray(int[] collection){
-    int lenth = collection.Length;
-    int index = 0;
-    while (index<lenth){
-        collection[index] = new Random().Next(1,10);
-        index++;
+void FillArray(int[] arr){
+    int i = 0;
+    while (i<arr.Length){
+        arr[i] = new Random().Next(100,1000);
+        i++;
     }
-
 }
 
-void PrintArray(int[] col){
-    int count = col.Length;
-    int position = 0;
-    while (position<count)
+void PrintArray(int[] arr){
+    int i = 0;
+    while (i<arr.Length)
     {
-        Console.Write(" " + col[position]);
-        position++;
+        Console.WriteLine(" " + arr[i] + " среднее число " + (arr[i]%100/10));
+        i++;
     }
 }
-
-int[] array = new int[10];
-
-FillArray(array);
-PrintArray(array);
