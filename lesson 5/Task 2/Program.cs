@@ -23,7 +23,7 @@ int ChetSum(int[] array){
     int sum = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i]%2 == 0){ sum = sum + array[i];}
+        if (array[i]%2 != 0){ sum = sum + array[i];}
     }
     return sum;
 } 
@@ -32,4 +32,4 @@ int[] arr = FillArray(n);
 // проверяем массив на четность
 int sum = ChetSum(arr);
 //вывод в консоль результата
-Console.Write("[{0}]" + " сумма четных элементов = " + sum, string.Join(", ", arr));
+Console.Write("[{0}]" + " сумма нечетных элементов = " + sum, string.Join(", ", arr));
