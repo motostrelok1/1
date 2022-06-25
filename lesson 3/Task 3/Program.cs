@@ -1,15 +1,36 @@
-﻿// Напишите программу, которая принимает на вход цифру, 
-//обозначающую день недели, и проверяет, является ли этот день выходным.
+﻿// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
 Console.Clear();
-Console.WriteLine("Введите целое  число от 1 до 7, соответствующее дню недели");
-int day = 0;                                        // инициализация переменной 
-while (day <= 0 || day >= 8)                        // пока не введется правильный день, 
-{                                                   //будет повторяться цикл ввода, 
-    day = Convert.ToInt32(Console.ReadLine());      //пока не будет введено число 1-7
-    Console.WriteLine(" введи число от 1 до 7 ");
+System.Console.WriteLine();
+
+// сначало вводим число N для создания количества элементов таблицы(массива)
+System.Console.Write("Введите число, таблицу кубов которого хотите увидеть:   ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+// создаем метод который заполняет массив в котором лежат сами кубы и возвращает этот массив
+int[] GetCubeTable(int N)
+{
+    int[] cubs = new int[N];
+    int number = 1;
+    for (int i = 0; i < N; i++)
+    {
+        cubs[i] = number * number * number;
+        number++;
+    }
+    return cubs;
 }
-if (day == 6 || day == 7){                          //проверка на "выходной день"
-    Console.WriteLine(" Этот входной");
-}else{
-    Console.WriteLine( " Это будни");
+
+// создаем метод, который выводит на экран таблицу кубов используя кубы из массива созданного выше
+void PrintCubs(int[] array)
+{
+    int number = 1;
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.WriteLine(number+" ^ 3 = "+array[i]+"  ");
+        number++;
+    }
 }
+// создаем массив, заполняем его методом GetCubTable и выводим в консоль
+int[] CubeTable = GetCubeTable(N);
+PrintCubs(CubeTable);
+
