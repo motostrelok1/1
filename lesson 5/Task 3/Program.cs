@@ -26,4 +26,3 @@ double[] arr = FillArray(n);
 //вывод в консоль массива, и разницы мах min элементов и округляем до второго знака
 Console.Write("[ {0} ]" + " разница min и max элементами массива = ", string.Join("   ", arr));
 Console.WriteLine(arr.Max() + " - " + arr.Min() + " = " + Math.Round((arr.Max()-arr.Min()),2));
-
