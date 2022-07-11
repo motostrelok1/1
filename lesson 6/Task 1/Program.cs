@@ -1,5 +1,5 @@
 ﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-///*
+
 void AmountOfPositiveNumbers(int M){
     int count = 0;
     for (int i = 0; i < M; i++)
@@ -14,4 +14,4 @@ void AmountOfPositiveNumbers(int M){
 Console.Write("Сколько числе будуту вводить? ");
 int m = Convert.ToInt32(Console.ReadLine());
 AmountOfPositiveNumbers(m);
-//*/
+
