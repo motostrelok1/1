@@ -22,7 +22,7 @@ int[,] GenArray(){
     {
         for (int j = 0; j < n; j++)
         {
-            arr[i, j] = rand.Next(-10, 11);
+            arr[i, j] = rand.Next(0, 10);
         }
 
     }
@@ -45,9 +45,9 @@ void GetElemArray(int[,] arr)
 {
     Console.WriteLine(" для вывода задуманного элемента массива");
     Console.Write("введите номер строки: ");
-    int m = int.Parse(Console.ReadLine ());
+    int m = (int.Parse(Console.ReadLine ()))-1;
     Console.Write("введите номер столбца: ");
-    int n = int.Parse(Console.ReadLine ());
+    int n = (int.Parse(Console.ReadLine ()))-1;
     string res =  m < arr.GetLength(0) && n < arr.GetLength(1)? $"{arr[m, n]}" : $"array[{m}, {n}] -->  такого элемента в массиве нет";
     Console.WriteLine(res);
 }

@@ -1,18 +1,14 @@
 ﻿//Задайте двумерный массив размером m×n, 
 //заполненный случайными вещественными числами.
-// m = 3, n = 4.
-// 0,5 7 -2 -0,2
-// 1 -3,3 8 -9,9
-// 8 7,8 -7,1 9
 
 Console.Clear();
 
 // метод создает двумерный массив
 double [,] GenDoubleArray()
 {
-    Console.Write("Введите число строк массива m: ");
+    Console.Write("Введите число строк массива: ");
     int m = int.Parse(Console.ReadLine ());
-    Console.Write("Введите число строк массива n: ");
+    Console.Write("Введите число столбцов массива: ");
     int n = int.Parse(Console.ReadLine ());
     double[,] arr = new double[m, n];
     Random rand = new Random();

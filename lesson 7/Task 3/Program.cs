@@ -7,12 +7,12 @@
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 Console.Clear();
-
+// метод задает и заполняет массив случайными числами
 int[,] GenArray()
 {
-    Console.Write("Введите число строк массива m: ");
+    Console.Write("Введите число строк массива: ");
     int m = int.Parse(Console.ReadLine ());
-    Console.Write("Введите число строк массива n: ");
+    Console.Write("Введите число столбцов массива: ");
     int n = int.Parse(Console.ReadLine ());
     int[,] arr = new int[m, n];
     Random rand = new Random();
@@ -21,13 +21,13 @@ int[,] GenArray()
     {
         for (int j = 0; j < n; j++)
         {
-            arr[i, j] = rand.Next(-10, 11);
+            arr[i, j] = rand.Next(0, 11);
         }
 
     }
     return arr;
 }
-
+// метод выводит массив в консоль
 void PrintArray(int[,] prarr)
 {
     for (int i = 0; i < prarr.GetLength(0); i++)
@@ -39,7 +39,7 @@ void PrintArray(int[,] prarr)
         Console.WriteLine();
     }
 }
-
+// метод считает среднее арифметическое по столбцамм
 void AverageElemColumnArray(int[,] arr)
 {
     int n = arr.GetLength(0);
