@@ -1,39 +1,76 @@
-﻿
-// Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-// 45 -> 101101, 3 -> 11
+﻿//Напишите программу, которая на вход принимает позиции элемента
+//в двумерном массиве, и возвращает значение этого элемента или 
+// указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 1, 7 -> такого числа в массиве нет
 
 Console.Clear();
-// метод конвертирует десятичное число в двоичное
-int[] ConvertingDecimalToBinary(int size, int number)
-{
-    int[] arr = new int[size];
-    for (int i = 0; i < size; i++)
+// метод генирирует двумерный массив
+int[,] GenArray(){
+    Console.WriteLine(" двумерный массив представлен в виде таблицы");
+    Console.Write("Введите число строк : ");
+    int m = int.Parse(Console.ReadLine ());
+    Console.Write("Введите число столбцов: ");
+    int n = int.Parse(Console.ReadLine ());
+    int[,] arr = new int[m, n];
+    Random rand = new Random();
+
+    for (int i = 0; i < m; i++)
     {
-        arr[i] = number % 2;
-        number /= 2;
+        for (int j = 0; j < n; j++)
+        {
+            arr[i, j] = rand.Next(-10, 11);
+        }
+
     }
     return arr;
 }
-//метод определения размера массива
-int ArraySize(int number)
+// метод выводит массив в консоль
+void PrintArray(int[,] prarr)
 {
-    int count = 0;
-    while (number > 0)
+    for (int i = 0; i < prarr.GetLength(0); i++)
     {
-        number /= 2;
-        count++;
+        for (int j = 0; j < prarr.GetLength(1); j++)
+        {
+            Console.Write(prarr[i,j] + " ");
+        }
+        Console.WriteLine();
     }
-    return count;
 }
-// метод разворачивает массив и выводит в консоль
-void ReverseAndPrintArray(int[] ar, int number)
+// метод запрашивает и выводит элемент массива
+void GetElemArray(int[,] arr)
 {
-    Console.Write(" число " + number + " в двоичном формате будет ");
-    for (int j = ar.Length - 1; j >= 0; j--) Console.Write(ar[j]);
+    Console.WriteLine(" для вывода задуманного элемента массива");
+    Console.Write("введите номер строки: ");
+    int m = int.Parse(Console.ReadLine ());
+    Console.Write("введите номер столбца: ");
+    int n = int.Parse(Console.ReadLine ());
+    string res =  m < arr.GetLength(0) && n < arr.GetLength(1)? $"{arr[m, n]}" : $"array[{m}, {n}] -->  такого элемента в массиве нет";
+    Console.WriteLine(res);
+}
+// метод ищет значение по элементам массива
+void FindNumArray(int[,] arr){
+    Console.Write("Введите число, для поиска его в заданном массиве: ");
+    int num = int.Parse(Console.ReadLine ());
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            if (arr[i,j] == num)
+            {
+                Console.WriteLine($"{num} -> число есть в массиве");
+                return;
+            }
+        }
+    }
+    Console.WriteLine($"{num} -> такого числа в массиве нет");
 }
 
-Console.Write("Введите десятичное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int s = ArraySize(number);
-int[] myArray = ConvertingDecimalToBinary(s, number);
-ReverseAndPrintArray(myArray, number);
+int[,] array = GenArray();
+PrintArray(array);
+GetElemArray(array);
+PrintArray(array);
+FindNumArray(array);
